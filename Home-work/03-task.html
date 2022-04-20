@@ -36,24 +36,22 @@
         let deliveryText = "Цена доставки";
         let costOfDelivery = 40;
 
+        let total = totalPriceProduct1 + totalPriceProduct2 + totalPriceProduct3;
+
+        let SMS = `${product1} - ${productQuantity1} шт. = ${totalPriceProduct1}
+                   ${product2} - ${productQuantity2} шт. = ${totalPriceProduct2}
+                   ${product3} - ${productQuantity3} шт. = ${totalPriceProduct3}`;
+
         if (delivery) {
-            let total = totalPriceProduct1 + totalPriceProduct2 + totalPriceProduct3 + costOfDelivery;
-            alert(`${product1} - ${productQuantity1} шт. = ${totalPriceProduct1}
-        ${product2} - ${productQuantity2} шт. = ${totalPriceProduct2}
-        ${product3} - ${productQuantity3} шт. = ${totalPriceProduct3}
-        ${deliveryText} = ${costOfDelivery}
-        Всего = ${total}`);
+            total += costOfDelivery;
+            SMS += `
+            ${deliveryText} = ${costOfDelivery}`;
         }
 
-        else {
-            let total = totalPriceProduct1 + totalPriceProduct2 + totalPriceProduct3;
-            alert(`${product1} - ${productQuantity1} шт. = ${totalPriceProduct1}
-        ${product2} - ${productQuantity2} шт. = ${totalPriceProduct2}
-        ${product3} - ${productQuantity3} шт. = ${totalPriceProduct3}
-        Всего = ${total}`);
-        }
+        SMS += `
+        Всего = ${total}`;
 
-
+        alert(SMS);
 
     </script>
 </body>
