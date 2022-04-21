@@ -44,12 +44,10 @@
 
         if (delivery) {
             total += costOfDelivery;
-            SMS += `
-            ${deliveryText} = ${costOfDelivery}`;
+            SMS += `${deliveryText} = ${costOfDelivery}`;
         }
 
-        SMS += `
-        Всего = ${total}`;
+        SMS += `Всего = ${total}`;
 
         alert(SMS);
 
